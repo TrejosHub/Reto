@@ -1,0 +1,36 @@
+.card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:16px 18px;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:16px;
+}
+@media (min-width: 900px){
+  .grid{ grid-template-columns: 380px 1fr; }
+}
+
+.flex-between{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+
+.form{ display:grid; gap:12px; }
+.form-row{ display:grid; gap:6px; }
+label{ font-weight:600; color:var(--muted); }
+input{
+  padding:10px 12px; border-radius:10px; border:1px solid #e5e7eb; outline:none;
+}
+input:focus{ border-color:var(--purple); box-shadow:0 0 0 3px rgba(106,13,173,.15); }
+
+.table-wrap{ overflow:auto; }
+.table{
+  width:100%; border-collapse: collapse;
+}
+th, td{
+  border-bottom:1px solid #eee; padding:10px;
+}
+th{ text-align:left; color:var(--muted); font-weight:600; }
+.actions{ display:flex; gap:8px; }
