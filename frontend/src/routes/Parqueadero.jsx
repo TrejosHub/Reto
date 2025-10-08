@@ -42,6 +42,16 @@ export default function Parqueadero() {
     await loadVehicles();
   };
 
+  const handleUpdate = async (id, { plate, owner }) => {
+    const res = await fetch(`/api/vehicles/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plate, owner })
+    });
+    if (!res.ok) return alert('Error al actualizar');
+    await loadVehicles();
+  };
+
   return (
     <section className="grid">
       <div className="card">
@@ -62,6 +72,7 @@ export default function Parqueadero() {
           vehicles={vehicles}
           onCheckout={handleCheckout}
           onDelete={handleDelete}
+          onUpdate={handleUpdate}
         />
       </div>
     </section>
